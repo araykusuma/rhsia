@@ -423,7 +423,7 @@ h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
 }
 
 .header-hero {
-	background: url(https://rhsia-youtuber.com//img/header-bg.jpg) center center no-repeat;
+	background: url('https://rhsia-youtuber.com//img/header-bg.jpg') center center no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
