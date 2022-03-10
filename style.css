@@ -1,4 +1,122 @@
-blockquote{
+del,
+ins {
+  position: relative;
+  display: inline-block; /* don't wrap to multiple lines */
+  text-decoration: none; /* replacing default del and ins */
+  font-weight: bold;
+  color: #26ff00;
+}
+
+del:after {
+  content: ""; /* required property */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(42%); /* strikethrough line height */
+  border-top: 5px solid red;
+  transform: rotateZ(-5deg); /* rotate strikethrough */
+  animation: del 0.5s ease-in;
+}
+
+ins:after {
+  content: ""; /* required property */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  animation: ins 1s ease-out; /* ins animation */
+  animation-delay: 0.75s; /* delay until del animation is done */
+  animation-fill-mode: forwards; /*keep animation */
+}
+
+/* del animation */
+@keyframes del {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ins animation */
+@keyframes ins {
+  0% {
+    width: 0;
+    background: rgb(255 0 0);
+    z-index: 0;
+  }
+  100% {
+    width: 100%;
+    background: rgb(255 0 0);
+    z-index: 0;
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-to {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+.time-to span {
+  display: block;
+  font-size: 60px;
+  color: red;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+	.time-to span {
+	  display: block;
+	  font-size: 40px;
+	  color: red;
+	  font-weight: bold;
+	}
+	.time-to {
+		font-size: 25px;
+	} 
+}
+
+ @keyframes fa-blink {
+     0% { opacity: 1; }
+     50% { opacity: 0.5; }
+     100% { opacity: 0; }
+ }
+.fa-blink {
+   -webkit-animation: fa-blink .75s linear infinite;
+   -moz-animation: fa-blink .75s linear infinite;
+   -ms-animation: fa-blink .75s linear infinite;
+   -o-animation: fa-blink .75s linear infinite;
+   animation: fa-blink .75s linear infinite;
+}
+.kunkun {
+	color: #FFE333;
+    background: linear-gradient(to bottom, transparent 50%, #ffffff00 20%, #cf1919);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.games {
+	max-width: 100%;
+}
+.sat-set-sut {
+	display: inline-grid;
+    justify-content: center;
+    padding: 0px 20px;
+} 
+
+ blockquote{
   display:block;
   background: #fff;
   padding: 15px 20px 15px 45px;
@@ -204,3 +322,79 @@ blockquote ins {
 .users tr:nth-child(even) {
   background: #e6adad;
 }
+
+@media screen and (min-width:1400px) {
+    .hero .video-wrapper {
+        width: 120%;
+        margin-left: -10%;
+        padding: 1% 19% 3%
+    }
+}
+
+	.video-wrapper {
+        padding: 1% 1% 2%
+    }
+    .video-wrapper {
+	    background-image: url(../img/video-bg.png);
+	    background-size: 100% auto;
+	    background-position: top;
+	    background-repeat: no-repeat;
+	    width: 100%;
+	    padding-left: 10%;
+	    padding-right: 10%;
+	    padding-top: 0
+	}
+	.responsive-container {
+		position: relative;
+		overflow: hidden;
+		padding-top: 0%
+	}
+	.youtube-player {
+		position: relative;
+		padding-bottom: 56.23%;
+		height: 0;
+		overflow: hidden;
+		max-width: 100%;
+		background: #000;
+		margin: 5px
+	}
+	.youtube-player iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background: 0 0
+	}
+	.youtube-player img {
+		bottom: 0;
+		display: block;
+		left: 0;
+		margin: auto;
+		max-width: 100%;
+		width: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		border: none;
+		height: auto;
+		cursor: pointer;
+		-webkit-transition: 0.4s all;
+		-moz-transition: 0.4s all;
+		transition: 0.4s all
+	}
+	.youtube-player img:hover {
+		-webkit-filter: brightness(75%)
+	}
+	.youtube-player .play {
+		height: 72px;
+		width: 72px;
+		left: 50%;
+		top: 50%;
+		margin-left: -36px;
+		margin-top: -36px;
+		position: absolute;
+		background: url("https://rhsia-youtuber.com/creator-acc.com/img/play.png") no-repeat;
+		cursor: pointer
+	}
